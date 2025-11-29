@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home - Sewing Camp</title>
+<script>
+// JavaScript functions from legacy site
+function MM_findObj(n, d) {
+    var p,i,x;  
+    if(!d) d=document; 
+    if((p=n.indexOf("?"))>0&&parent.frames.length) {
+        d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);
+    }
+    if(!(x=d[n])&&d.all) x=d.all[n]; 
+    for(i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+    for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+    if(!x && d.getElementById) x=d.getElementById(n); 
+    return x;
+}
+
+function MM_nbGroup(event, grpName) {
+    var i,img,nbArr,args=MM_nbGroup.arguments;
+    if(event=="init" && args.length>2){
+        if((img=MM_findObj(args[2]))!=null && !img.MM_init){
+            img.MM_init=true; img.MM_up=args[3]; img.MM_dn=img.src;
+            if((nbArr=document[grpName])==null) nbArr=document[grpName]=new Array();
+            nbArr[nbArr.length]=img;
+            for(i=4;i<args.length-1;i+=2) if((img=MM_findObj(args[i]))!=null){
+                if(!img.MM_up) img.MM_up=img.src;
+                img.src=img.MM_dn=args[i+1];
+                nbArr[nbArr.length]=img;
+            }
+        }
+    } else if(event=="over"){
+        document.MM_nbOver=nbArr=new Array();
+        for(i=1;i<args.length-1;i+=3) if((img=MM_findObj(args[i]))!=null){
+            if(!img.MM_up) img.MM_up=img.src;
+            img.src=(img.MM_dn && args[i+2])?args[i+2]:((args[i+1])?args[i+1]:img.MM_up);
+            nbArr[nbArr.length]=img;
+        }
+    } else if(event=="out"){
+        for(i=0;i<document.MM_nbOver.length;i++){
+            img=document.MM_nbOver[i]; 
+            img.src=(img.MM_dn)?img.MM_dn:img.MM_up;
+        }
+    } else if(event=="down"){
+        nbArr=document[grpName];
+        if(nbArr) for(i=0;i<nbArr.length;i++){ img=nbArr[i]; img.src=img.MM_up; img.MM_dn=0; }
+        document[grpName]=nbArr=new Array();
+        for(i=2;i<args.length-1;i+=2) if((img=MM_findObj(args[i]))!=null){
+            if(!img.MM_up) img.MM_up=img.src;
+            img.src=img.MM_dn=(args[i+1])?args[i+1]:img.MM_up;
+            nbArr[nbArr.length]=img;
+        }
+    }
+}
+
+function MM_preloadImages() {
+    var d=document; if(d.images){ if(!d.MM_p)d.MM_p=new Array();
+        var i,j=d.MM_p.length,a=MM_preloadImages.arguments; 
+        for(i=0;i<a.length;i++) if(a[i].indexOf("#")!=0){
+            d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];
+        }
+    }
+}
+</script>
+
+<style>
+.style1 {font-family: Verdana, Arial, Helvetica, sans-serif;}
+.style6 {font-family: Arial, Helvetica, sans-serif; font-size: 10px;}
+.style13 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #0000FF; font-style: italic;}
+.style14 {font-family: Arial, Helvetica, sans-serif;}
+</style>
+
+</head>
+<body bgcolor="#ffffff" onload="MM_preloadImages('images/home_f2.gif','images/home_f3.gif','images/home_f4.gif')">
+
+<table border="0" cellspacing="0" cellpadding="0" width="700">
+<tr>
+<td colspan="16"><img src="/images/SewingMadeSimpleForKidsBanner.png" width="552" height="100" alt="Sewing Made Simple for Kids Banner"></td>
+<td rowspan="2" colspan="4"><img src="images/sew_mach.gif" width="148" height="152" alt=""></td>
+<td><img src="images/spacer.gif" width="1" height="100" alt=""></td>
+</tr>
+<tr>
+<td colspan="16"><img src="images/summer_camp.gif" width="552" height="52" alt=""></td>
+<td><img src="images/spacer.gif" width="1" height="52" alt=""></td>
+</tr>
+
+<!-- Navigation -->
+<tr>
+<td rowspan="2"><img src="images/left_of_nav.gif" width="49" height="46" alt=""></td>
+<td colspan="5"><a href="/"><img src="images/home.gif" width="130" height="30" alt="Home"></a></td>
+<td colspan="4"><a href="/campinfo"><img src="images/camp_info.gif" width="130" height="30" alt="Camp Info"></a></td>
+<td colspan="3"><a href="/campschedule"><img src="images/camp_sched.gif" width="130" height="30" alt="Camp Schedule"></a></td>
+<td colspan="4"><a href="/registration"><img src="images/registration.gif" width="130" height="30" alt="Registration"></a></td>
+<td colspan="2"><a href="/contactus"><img src="images/contact_us.gif" width="130" height="30" alt="Contact Us"></a></td>
+<td rowspan="2"><img src="images/template_r3_c20.gif" width="1" height="46" alt=""></td>
+<td><img src="images/spacer.gif" width="1" height="30" alt=""></td>
+</tr>
+
+<tr>
+<td bgcolor="#ffffff" valign="top" colspan="18">
+<p class="style13">Welcome to Sewing Made Simple For Kids!</p>
+<p class="style13">Summer Sewing Camp!</p>
+
+<p class="style14">Welcome to Summer Sewing Camp 2025!</p> <br> <br>
+<p class="style14">Sewing camp gives campers ages 8-16 the opportunity to learn basic sewing skills while sewing clothing and crafts. 
+Each camp session runs for one week for either two hours in the morning or afternoon. 
+Campers need to have completed 2nd Grade to come to camp. We have the machines, equipment, and patterns here in our workshop. 
+Campers will purchase their own fabric and sew four projects during camp. 
+Beginner campers will sew a pillow case, patchwork pillow, purse or beach bag and PJ Capris or pants for their first year. 
+Returning campers may choose the beginner projects or from the project list below.</p> <br> <br>
+<p class="style14">
+Parents should email their 1st and 2nd camp session preferences to hold a spot for their child. 
+I will email back confirming their spot for that week. 
+Once you have received confirmation, please go online and fill out the registration form and mail it to me with your check for $125. 
+Sessions fill up quickly so please contact me on your camp preferences as soon as possible.
+</p>
+</td>
+<td><img src="images/spacer.gif" width="1" height="16" alt=""></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="/registration"><img src="images/reg_button.gif" width="88" height="36" alt="Register"></a></td>
+<td rowspan="5"><img src="images/left_of_text.gif" width="21" height="402" alt=""></td>
+<td colspan="17" rowspan="2" align="left" valign="middle" bgcolor="#ffffff">
+<p class="style13">Featured Activities</p>
+<p class="style14">Join our sewing camp to learn a variety of techniques, create projects, and make new friends!</p>
+<img src="images/sewing_needle.gif" width="549" height="37" alt="Sewing Needle" align="center">
+</td>
+<td><img src="images/spacer.gif" width="1" height="36" alt=""></td>
+</tr>
+
+<tr>
+<td rowspan="4" colspan="2"><img src="images/below_reg_button.gif" width="88" height="366" alt=""></td>
+<td><img src="images/spacer.gif" width="1" height="347" alt=""></td>
+</tr>
+
+<tr>
+<td rowspan="2" colspan="17"><img src="images/below_text.gif" width="591" height="5" alt=""></td>
+<td><img src="images/spacer.gif" width="1" height="4" alt=""></td>
+</tr>
+
+<tr>
+<td><img src="images/spacer.gif" width="1" height="1" alt=""></td>
+</tr>
+
+<tr>
+<td><img src="images/l_home.gif" width="15" height="14" alt=""></td>
+<td><a href="/"><img src="images/home_2.gif" width="37" height="14" alt=""></a></td>
+<td colspan="2"><img src="images/r_home.gif" width="20" height="14" alt=""></td>
+<td><a href="/campinfo"><img src="images/template_r9_c8.gif" width="71" height="14" alt=""></a></td>
+<td><img src="images/r_camp_info.gif" width="21" height="14" alt=""></td>
+<td colspan="2"><a href="/campschedule"><img src="images/template_r9_c10.gif" width="101" height="14" alt=""></a></td>
+<td><img src="images/r_camp_sched.gif" width="21" height="14" alt=""></td>
+<td colspan="2"><a href="/registration"><img src="images/template_r9_c13.gif" width="81" height="14" alt=""></a></td>
+<td><img src="images/r_reg.gif" width="21" height="14" alt=""></td>
+<td colspan="3"><a href="/contactus"><img src="images/contact_us2.gif" width="75" height="14" alt=""></a></td>
+<td colspan="2"><img src="images/template_r9_c19.gif" width="128" height="14" alt=""></td>
+<td><img src="images/spacer.gif" width="1" height="14" alt=""></td>
+</tr>
+</table>
+
+</body>
+</html>
+
+<!-- End of index.ejs -->
