@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Home - Sewing Camp</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
 <script>
 // JavaScript functions from legacy site
 function MM_findObj(n, d) {
@@ -66,14 +71,126 @@ function MM_preloadImages() {
 </script>
 
 <style>
-.style1 {font-family: Verdana, Arial, Helvetica, sans-serif;}
-.style6 {font-family: Arial, Helvetica, sans-serif; font-size: 10px;}
-.style13 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #0000FF; font-style: italic;}
-.style14 {font-family: Arial, Helvetica, sans-serif;}
+/* --- BASE & PAGE STYLES --- */
+body {
+    background-color: #fdfbf7; /* Warm paper color */
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #444;
+}
+
+/* Center everything */
+table {
+    margin: 0 auto;
+}
+
+/* --- LEGACY TOP SECTION STYLING --- */
+/* We target the specific width 700 table to style the top part without breaking layout */
+table[width="700"] {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 0 0 15px 15px; /* Rounded bottom corners only */
+    margin-bottom: 40px; /* Space between top section and project list */
+}
+
+/* Style the text inside the top section */
+.style13 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600; 
+    color: #ff6b6b; /* Playful coral/pink */
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-style: normal; /* Removed italic for better readability */
+}
+
+.style14 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- NEW PROJECT TABLE STYLING --- */
+.project-gallery {
+    width: 100%;
+    max-width: 1000px; /* Made slightly wider for better spacing */
+    border-collapse: separate; 
+    border-spacing: 20px; /* Gaps between cards */
+}
+
+/* The Card Look */
+.project-gallery td {
+    background: #ffffff;
+    border: 2px dashed #ff9a9e; /* STITCH EFFECT: Pink dashed border */
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    vertical-align: top;
+    width: 25%; /* Forces 4 columns */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover Effect on Cards */
+.project-gallery td:hover {
+    transform: translateY(-5px); /* Lifts up */
+    border-color: #a18cd1; /* Turns purple */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Images inside cards */
+.project-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Typography inside cards */
+.project-gallery td {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #444;
+}
+
+/* --- SECTION HEADERS (First Summer Sewer, etc) --- */
+/* Styling the rows that act as titles */
+.section-header {
+    background-color: #a18cd1 !important; /* Purple background */
+    color: white !important;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 26px;
+    padding: 15px 0;
+    border: none !important;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(161, 140, 209, 0.4);
+    /* Override grid styles for headers */
+    width: auto !important; 
+    border-spacing: 0;
+}
+
+/* Remove hover effect from headers */
+.project-gallery td.section-header:hover {
+    transform: none;
+    cursor: default;
+}
+
+/* Clean up empty cells */
+.project-gallery td:empty {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
 </style>
 
 </head>
-<body bgcolor="#ffffff" onload="MM_preloadImages('images/home_f2.gif','images/home_f3.gif','images/home_f4.gif')">
+<body onload="MM_preloadImages('images/home_f2.gif','images/home_f3.gif','images/home_f4.gif')">
 
 <table border="0" cellspacing="0" cellpadding="0" width="700">
 <tr>
@@ -86,7 +203,6 @@ function MM_preloadImages() {
 <td><img src="images/spacer.gif" width="1" height="52" alt=""></td>
 </tr>
 
-<!-- Navigation -->
 <tr>
 <td rowspan="2"><img src="images/left_of_nav.gif" width="49" height="46" alt=""></td>
 <td colspan="5"><a href="/"><img src="images/home.gif" width="130" height="30" alt="Home"></a></td>
@@ -99,7 +215,7 @@ function MM_preloadImages() {
 </tr>
 
 <tr>
-<td bgcolor="#ffffff" valign="top" colspan="18">
+<td bgcolor="#ffffff" valign="top" colspan="18" style="padding: 25px;">
 <p class="style13">Welcome to Sewing Made Simple For Kids!</p>
 <p class="style13">Summer Sewing Camp!</p>
 
@@ -117,7 +233,7 @@ Once you have received confirmation, please go online and fill out the registrat
 Sessions fill up quickly so please contact me on your camp preferences as soon as possible.
 </p>
 </td>
-<td><img src="images/spacer.gif" width="1" height="16" alt=""></td>
+<td><img src="images/spacer.gif" width="1" height="16" alt="Picture"></td>
 </tr>
 
 <tr>
@@ -128,7 +244,7 @@ Sessions fill up quickly so please contact me on your camp preferences as soon a
 <p class="style14">Join our sewing camp to learn a variety of techniques, create projects, and make new friends!</p>
 <img src="images/sewing_needle.gif" width="549" height="37" alt="Sewing Needle" align="center">
 </td>
-<td><img src="images/spacer.gif" width="1" height="36" alt=""></td>
+<td><img src="images/spacer.gif" width="1" height="36" alt="Picture"></td>
 </tr>
 
 <tr>
@@ -146,7 +262,7 @@ Sessions fill up quickly so please contact me on your camp preferences as soon a
 </tr>
 
 <tr>
-<td><img src="images/l_home.gif" width="15" height="14" alt=""></td>
+<td><img src="images/SewingMadeSimpleForKidsBanner" width="15" height="14" alt=""></td>
 <td><a href="/"><img src="images/home_2.gif" width="37" height="14" alt=""></a></td>
 <td colspan="2"><img src="images/r_home.gif" width="20" height="14" alt=""></td>
 <td><a href="/campinfo"><img src="images/template_r9_c8.gif" width="71" height="14" alt=""></a></td>
@@ -161,7 +277,173 @@ Sessions fill up quickly so please contact me on your camp preferences as soon a
 </tr>
 </table>
 
+<table class="project-gallery">
+<tr>
+    <td colspan="4" class="section-header">First Summer Sewer Projects</td>
+</tr>
+<tr>
+    <td><img src="/images/Pillowcase.gif" alt="Pillow Case"><br>r<br>Pillow Case <br>(Day 1)</td>
+    <td><img src="/images/Patchwork Pillow.jpg" alt="Patchwork Pillow"><br><br>Patchwork Pillow <br>(Day 2)</td>
+    <td><img src="/images/Beach bag.gif" alt="Beach Bag"><br><img src="/images/Simple Purse.gif" alt="Simple Purse"><br><br>Pillow Case OR Simple Purse <br>(Day 3)</td>
+    <td><img src="/images/PJ Pants.gif" alt="PJ Pants"><br><img src="/images/Capris.gif" alt="Capris"><br><br>PJ Pants OR Capris <br>(Day 4 & 5)</td>
+</tr>
+<tr>
+    <td colspan="4" class="section-header">Returning Sewer Summer Projects</td>
+</tr>
+<tr>
+    <td><img src="/images/Favorite Team Bag.gif" alt="Favorite Team Bag"><br><br>Favorite Team Bag</td>
+    <td><img src="/images/Sports Bag.jpg" alt="Sports Bag"><br><br>Sports Bag</td>
+    <td><img src="/images/SleepOver Bag.gif" alt="Sleep Over Bag"><br><br>Sleep Over Bag</td>
+    <td><img src="/images/Beach bag.gif" alt="Beach Bag"><br><br>Pillow Case <br>(Day One)</td>
+</tr>
+<tr>
+    <td><img src="/images/Sling Bag.gif" alt="Sling Bag"><br><br>Sling Bag</td>
+    <td><img src="/images/Ella's Purse.gif" alt="Ella's Purse"><br><br>Ella's Purse</td>
+    <td><img src="/images/Simple Purse.gif" alt="Simple Purse"><br><br>Simple Purse</td>
+    <td><img src="/images/Two Tone Tote Bag.jpg" alt="Two Tone Tote Bag"><br><br>Two Tone Tote Bag</td>
+</tr>
+<tr>
+    <td><img src="/images/Owl Purse.jpg" alt="Owl Purse"><br><br>Owl Purse</td>
+    <td><img src="/images/Crossover Purse.gif" alt="Crossover Purse"><br><br>Crossover Purse</td>
+    <td><img src="/images/Duffle Bag.jpg" alt="Duffle Bag"><br><br>Duffle Bag</td>
+    <td><img src="/images/Zipper Pouch.jpg" alt=""><br><br>Zipper Pouch<br>(You will make one) </td>
+</tr>
+<tr>
+    <td><img src="/images/Cinch Backpack.jpg" alt="Cinch Backpack"><br><br>Cinch Backpack</td>
+    <td><img src="/images/Library Bag.png" alt="Library Bag"><br><br>Library Bag</td>
+    <td><img src="/images/Vera Bradley Bag.jpg" alt="Vera Bradley Bag"><br><br>Vera Bradley Bag</td>
+    <td><img src="/images/Quilted Charm Bag.png" alt="Quilted Charm Bag"><br><br>Quilted Charm Bag</td>
+</tr>
+<tr>
+    <td><img src="/images/Large Zipper Bag.png" alt="Large Zipper Bag"><br><br>Large Zipper Bag</td>
+    <td><img src="/images/Drawstring Backpack.gif" alt="Drawstring Backpack"><br><br>Drawstring Backpack</td>
+    <td><img src="/images/Chloe's Purse.png" alt="Chloe's Purse"><br><br>Chloe's Purse</td>
+    <td><img src="/images/Flat Bottom Zipper Bag.jpg" alt="Flat Bottom Zipper Bag"><br><br>Flat Bottom Zipper Bag</td>
+</tr>
+<tr>
+    <td><img src="/images/Confetti Vinyl Bag.jpg" alt="Confetti Vinyl Bag"><br><br>Confetti Vinyl Bag</td>
+    <td><img src="/images/Cross Body Bag.png" alt="Cross Body Bag"><br><br>Cross Body Bag</td>
+    <td><img src="/images/Easy Zipper Purse.jpg" alt="Easy Zipper Purse"><br><br>Easy Zipper Purse</td>
+    <td><img src="/images/Beach Towel Pants for Swimmers.jpg" alt="Beach Towel Pants for Swimmers"><br><br>Beach Towel Pants for Swimmers</td>
+</tr>
+<tr>
+    <td><img src="/images/Jr Misses Ditsy Skirt.png" alt="Jr Misses Ditsy Skirt"><br><br>Jr Misses Ditsy Skirt</td>
+    <td><img src="/images/Sweatshirt and Shorts.jpg" alt="Sweatshirt and Shorts"><br><br>Sweatshirt and Shorts <br>Sizes 8, 10, 12</td>
+    <td><img src="/images/Misses Summer Skirts.jpg" alt="Misses Summer Skirts"><br><br>Misses Summer Skirts</td>
+    <td><img src="/images/PJ Shorts.png" alt="PJ Shorts"><br><br>PJ Shorts</td>
+</tr>
+<tr>
+    <td><img src="/images/PJ Capris.gif" alt="PJ Capris"><br><br>PJ Capris</td>
+    <td><img src="/images/PJ Long Pants.gif" alt="PJ Long Pants"><br><br>PJ Long Pants</td>
+    <td><img src="/images/Children's Girls Top With Sleeves.jpg" alt="Children's Girls Top With Sleeves"><br><br>Children's Girls Top With Sleeves <br>(Lace or Solid)</td>
+    <td><img src="/images/Jr Misses Pocket Skirt.gif" alt="Jr/Misses Pocket Skirt"><br><br>Jr/Misses Pocket Skirt</td>
+</tr>
+<tr>
+    <td><img src="/images/Modern Elastic Skirt.gif" alt="Modern Elastic Skirt"><br><br>Modern Elastic Skirt</td>
+    <td><img src="/images/Straight Skirt.gif" alt="Straight Skirt"><br><br>Straight Skirt</td>
+    <td><img src="/images/Fleece Robes.jpg" alt="Fleece Robes"><br><br>Fleece Robes</td>
+    <td><img src="/images/Capri Joggers.jpg" alt="Capri Joggers"><br><br>Capri Joggers <br> (Junior and Misses)</td>
+</tr>
+<tr>
+    <td><img src="/images/Childrens Joggers.png" alt="Childrens Joggers"><br><br>Childrens Joggers <br>(Sizes 9-14)</td>
+    <td><img src="/images/Fleece Zip Up Onesie.gif" alt="Fleece Zip Up Onesie"><br><br>Fleece Zip Up Onesie <br>(Childrens, Juniors, and Womens)</td>
+    <td><img src="/images/Girls and Juniors Skirts.jpg" alt="Girls and Juniors Skirts"><br><br>Girls and Juniors Skirts <br>Waistband in front, elastic in the back</td>
+    <td><img src="/images/Children's Summer Top.jpg" alt="Children's Summer Top"><br><br>Children's Summer Top <br>(Sizes 8-14)</td>
+</tr>
+<tr>
+    <td><img src="/images/Children Adult Lounge Pants.jpg" alt="Children Adult Lounge Pants"><br><br>Children Adult Lounge Pants</td>
+    <td><img src="/images/Children's Maxi Skirt.jpg" alt="Children's Maxi Skirt"><br><br>Children's Maxi Skirt</td>
+    <td><img src="/images/Jr Misses Long Maxi Skirt.gif" alt="Jr Misses Long Maxi Skirt"><br><br>Jr/Misses Long Maxi Skirt</td>
+    <td><img src="/images/Fleece Sweatshirt.gif" alt="Fleece Sweathshirt"><br><br>Fleece Sweatshirt</td>
+</tr>
+<tr>
+    <td><img src="/images/Fleece Jacket with Zipper.png" alt="Fleece Jacket with Zipper"><br><br>Fleece Jacket with Zipper</td>
+    <td><img src="/images/Beach or Flowerpot Table Runner.png" alt="Beach or Flowerpot Table Runner"><br><br>Beach or Flowerpot Table Runner</td>
+    <td><img src="/images/Water Bottle Holder.jpg" alt="Water Bottle Holder"><br><br>Water Bottle Holder</td>
+    <td><img src="/images/Ferdinand the Frog.jpg" alt="Ferdinand the Frog"><br><br>Ferdinand the Frog</td>
+</tr>
+<tr>
+    <td><img src="/images/Wendy the Whale.gif" alt="Wendy the Whale"><br><br>Wendy the Whale <br>(14")</td>
+    <td><img src="/images/Sloth.jpg" alt="Sloth"><br><br>Sloth <br>(15")</td>
+    <td><img src="/images/Wallace the Whale.jpg" alt="Wallace the Whale"><br><br>Wallace the Whale <br>(24")</td>
+    <td><img src="/images/Koala Bear.jpg" alt="Koala Bear"><br><br>Koala Bear <br> (15")</td>
+</tr>
+<tr>
+    <td><img src="/images/Panda Bear.jpg" alt="Panda Bear"><br><br> Panda Bear <br>(15")</td>
+    <td><img src="/images/Llama.gif" alt="Llama"><br><br>Llama</td>
+    <td><img src="/images/Baby Yoda.jpg" alt="Baby Yoda"><br><br>Baby Yoda</td>
+    <td><img src="/images/Casey the Crab.jpg" alt="Casey the Crab"><br><br>Casey the Crab</td>
+</tr>
+<tr>
+    <td><img src="/images/Dachshund Dave.jpg" alt="Dachshund Dave"><br><br>Dachshund Dave</td>
+    <td><img src="/images/Fleece Dolphin.gif" alt="Fleece Dolphin"><br><br>Fleece Dolphin</td>
+    <td><img src="/images/Dinosaur.gif" alt="Dinosaur"><br><br>Dinosaur</td>
+    <td><img src="/images/Name Pillow.jpg" alt="Name Pillow"><br><br>Name Pillow</td>
+</tr>
+<tr>
+    <td><img src="/images/Shoulder Dragon.jpg" alt="Shoulder Dragon"><br><br>Shoulder Dragon</td>
+    <td><img src="/images/Hugging Stuffed Fleece Animals.gif" alt="Hugging Stuffed Fleece Animals"><br><br>Hugging Stuffed Fleece Animals <br>(Overstuffed 20" tall)</td>
+    <td><img src="/images/Chunky Puppy.gif" alt="Chunky Puppy"><br><br>Chunky Puppy</td>
+    <td><img src="/images/Fleece Pug.jpg" alt="Fleece Pug"><br><br>Fleece Pug</td>
+</tr>
+<tr>
+    <td><img src="/images/Stuffed Cat.jpg" alt="Stuffed Cat"><br><br>Stuffed Cat</td>
+    <td><img src="/images/Scooter Buddy Bag.jpg" alt="Scooter Buddy Bag"><br><br>Scooter Buddy Bag</td>
+    <td><img src="/images/Fleece Puppy.jpg" alt="Fleece Puppy"><br><br>Fleece Puppy</td>
+    <td><img src="/images/Standing Dog.jpg" alt="Standing Dog"><br><br>Standing Dog</td>
+</tr>
+<tr>
+    <td><img src="/images/Patriotic Gnome.gif" alt="Patriotic Gnome"><br><br>Patriotic Gnome</td>
+    <td><img src="/images/Unicorn Pillow.jpg" alt="Unicorn Pillow"><br><br>Unicorn Pillow</td>
+    <td><img src="/images/Puffy Penguin.gif" alt="Puffy Penguin"><br><br>Puffy Penguin (12") <br> (Sew One)</td>
+    <td><img src="/images/Narwhal.jpg" alt="Narwhal"><br><br>Narwhal</td>
+</tr>
+<tr>
+    <td><img src="/images/Crocodile Pillow.jpg" alt="Crocodile Pillow"><br><br>Crocodile Pillow</td>
+    <td><img src="/images/Flip Flop Pillow.jpg" alt="Flip Flop Pillow"><br><br>Flip Flop Pillow (You will sew one)</td>
+    <td><img src="/images/Reading Pillow.jpg" alt="Reading Pillow"><br><br>Reading Pillow</td>
+    <td><img src="/images/Bike Handlebar Bag.jpg" alt="Bike Handlebar Bag"><br><br>Bike Handlebar Bag</td>
+</tr>
+<tr>
+    <td><img src="/images/Beach Towel Backpack.png" alt="Beach Towel Backpack"><br><br>Beach Towel Backpack</td>
+    <td><img src="/images/Kangaroo.png" alt="Kangaroo"><br><br>Kangaroo</td>
+    <td><img src="/images/Hanging Room Organizer.png" alt="Hanging Room Organizer"><br><br>Hanging Room Organizer</td>
+    <td><img src="/images/Square Patchwork Pillow.jpg" alt="Square Patchwork Pillow"><br><br>Square Patchwork Pillow</td>
+</tr>
+<tr>
+    <td><img src="/images/Flower Fleece Pillow.gif" alt="Flower Fleece Pillow"><br><br>Flower Fleece Pillow</td>
+    <td><img src="/images/Beginner Quilt.jpg" alt="Beginner Quilt"><br><br>Beginner Quilt</td>
+    <td><img src="/images/Bedside Organizer.gif" alt="Bedside Organizer"><br><br>Bedside Organizer</td>
+    <td><img src="/images/Doll Sleeping Bag.jpg" alt="Doll Sleeping Bag"><br><br>Doll Sleeping Bag</td>
+</tr>
+<tr>
+    <td><img src="/images/More Than a Beach Towel.png" alt="More Than a Beach Towel"><br><br>More Than a Beach Towel</td>
+    <td><img src="/images/Taco.jpg" alt="Taco"><br><br>Taco (13"x19")</td>
+    <td><img src="/images/Stripped Lounge Quilt.gif" alt="Stripped Lounge Quilt"><br><br>Stripped Lounge Quilt</td>
+    <td><img src="/images/Poseable Dogs.jpg" alt="Poseable Dogs"><br><br>Poseable Dogs</td>
+</tr>
+<tr>
+    <td><img src="/images/Patriotic Table Runner.gif" alt="Patriotic Table Runner"><br><br>Patriotic Table Runner</td>
+    <td><img src="/images/American Girl Doll Blanket and Pillow.jpg" alt="American Girl Doll Blanket and Pillow"><br><br>American Girl Doll Blanket and Pillow</td>
+    <td><img src="/images/Hobby Apron.png" alt="Hobby Apron"><br><br>Hobby Apron</td>
+    <td><img src="/images/Unicorn Dancer.jpg" alt="Unicorn Dancer"><br><br>Unicorn Dancer</td>
+</tr>
+<tr>
+    <td><img src="/images/Striped Cat.jpg" alt="Striped Cat"><br><br>Striped Cat</td>
+    <td><img src="/images/Stuffed Dragons.jpg" alt="Stuffed Dragons"><br><br>Stuffed Dragons</td>
+    <td><img src="/images/Fleece Cat.jpg" alt="Fleece Cat"><br><br>Fleece Cat</td>
+    <td><img src="/images/Beach Gnome.jpg" alt="Beach Gnome"><br><br>Beach Gnome</td>
+</tr>
+<tr>
+    <td><img src="/images/Fleece Travel Pillow.png" alt="Fleece Travel Pillow"><br><br>Fleece Travel Pillow</td>
+    <td><img src="/images/Neck Pillow.jpg" alt="Neck Pillow"><br><br>Neck Pillow</td>
+    <td><img src="/images/Owl Neck Pillow.jpg" alt="Owl Neck Pillow"><br><br>Owl Neck Pillow</td>
+    <td><img src="/images/Penguin Neck Pillow.gif" alt="Penguin Neck Pillow"><br><br>Penguin Neck Pillow</td>
+</tr>
+<tr>
+    <td><img src="/images/Various Neck Pillows.gif" alt="Various Neck Pillows"><br><br>Various Neck Pillows <br>(Choose 1)</td>
+</tr>
+</table>
+
 </body>
 </html>
-
-<!-- End of index.ejs -->
