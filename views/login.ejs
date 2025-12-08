@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login - Sewing Camp</title>
+<style>
+/* Unified theme for login */
+body {background: linear-gradient(180deg, #fffefa 0%, #f6f9ff 100%); font-family: 'Nunito', Arial, sans-serif; color:#222}
+
+/* Navigation Bar Styles */
+.navbar {
+    background: linear-gradient(135deg, #2a3d66 0%, #0b3d8a 100%);
+    padding: 0;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(42, 61, 102, 0.2);
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar-brand {
+    display: none;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar-item {
+    position: relative;
+}
+
+.navbar-item a {
+    display: block;
+    padding: 18px 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar-item a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-bottom-color: #ff8fab;
+}
+
+.navbar-item a.active {
+    border-bottom-color: #ff8fab;
+    color: #ffb8c8;
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 8px;
+    padding: 8px 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #ff8fab, #d6336c);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-login:hover {
+    box-shadow: 0 6px 16px rgba(214, 51, 108, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-admin {
+    background: linear-gradient(135deg, #0b63ff, #0452d4);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-admin:hover {
+    box-shadow: 0 6px 16px rgba(11, 99, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-logout:hover {
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .navbar-brand {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar-menu {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .navbar-item a {
+        padding: 12px 12px;
+        font-size: 13px;
+    }
+    
+    .navbar-actions {
+        width: 100%;
+        padding: 12px 15px;
+        justify-content: center;
+    }
+}
+
+.container {max-width:520px; margin:40px auto; background:#fff; padding:22px 26px; border-radius:12px; box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+.header{display:flex; align-items:center; gap:12px}
+.header img{width:64px}
+.h1{font-family:'Fredoka', 'Lucida Handwriting', 'Comic Sans MS', Arial, sans-serif; color:#d6336c; font-size:22px; font-weight:700}
+.form-row{margin:12px 0}
+label{display:block; margin-bottom:6px; color:#374151; font-weight:700}
+input[type="text"], input[type="password"]{width:100%; padding:10px 12px; border:1px solid #d1d5db; border-radius:8px}
+.btn{background:linear-gradient(180deg,#ff8fab,#d6336c); color:#fff; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:800}
+.small{font-size:13px; color:#475569}
+.message {padding:10px; border-radius:6px; margin-bottom:10px}
+.error{background:#fff1f2; color:#9f1239; border:1px solid #fecaca}
+.success{background:#ecfdf5; color:#065f46; border:1px solid #bbf7d0}
+.footer{margin-top:12px; text-align:center}
+</style>
+<script>
+// Ensure navbar sits below banner image on all pages
+document.addEventListener('DOMContentLoaded', function(){
+    try {
+        var nav = document.querySelector('nav.navbar');
+        var bannerImg = document.querySelector('img[src="/images/SewingMadeSimpleForKidsBanner.png"]');
+        if (nav && bannerImg) {
+            var bannerTable = bannerImg.closest('table');
+            if (bannerTable && bannerTable.parentNode) {
+                bannerTable.parentNode.insertBefore(nav, bannerTable.nextSibling);
+            }
+        }
+    } catch(e) { /* no-op */ }
+});
+</script>
+</head>
+<body>
+
+<!-- Banner then Navigation Bar -->
+<table border="0" cellspacing="0" cellpadding="0" width="700">
+    <tr>
+        <td colspan="16"><img src="/images/SewingMadeSimpleForKidsBanner.png" alt="Sewing Made Simple for Kids Banner" style="display:block;width:100%;height:auto;border-radius:8px"></td>
+        <td rowspan="2" colspan="4"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="16"></td>
+        <td></td>
+    </tr>
+</table>
+
+<nav class="navbar" role="navigation" aria-label="Main">
+        <ul class="navbar-menu">
+                <li class="navbar-item"><a href="/">Home</a></li>
+                <li class="navbar-item"><a href="/campinfo">Camp Info</a></li>
+                <li class="navbar-item"><a href="/campschedule">Schedule</a></li>
+                <li class="navbar-item"><a href="/registrations">Registration</a></li>
+                <li class="navbar-item"><a href="/contactus">Contact</a></li>
+        </ul>
+        <div class="navbar-actions">
+                <a href="/registrations" class="btn-login">Register</a>
+        </div>
+</nav>
+
+<div class="container">
+  <div class="header">
+    <div style="width:64px;height:64px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#0b63ff;font-weight:700">S</div>
+    <div>
+      <div class="h1">Sewing Camp Login</div>
+      <div class="small">Enter your account details to continue</div>
+    </div>
+  </div>
+
+  <% if (error_message) { %>
+    <div class="message error"><%= error_message %></div>
+  <% } %>
+  <% if (success_message) { %>
+    <div class="message success"><%= success_message %></div>
+  <% } %>
+
+  <form action="/login" method="POST">
+    <div class="form-row">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-row">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div style="text-align:center; margin-top:12px">
+      <button type="submit" class="btn">Log In</button>
+    </div>
+  </form>
+
+  <div class="footer small">
+    <a href="/registrations">Register for camp</a> · <a href="/">Home</a>
+  </div>
+</div>
+</body>
+</html>

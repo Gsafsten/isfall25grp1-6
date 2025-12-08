@@ -2,39 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Camp Schedule - Sewing Camp</title>
-
-<script>
-// Keep legacy JavaScript functions for hover effects
-function MM_findObj(n, d) {
-    var p,i,x;  
-    if(!d) d=document; 
-    if((p=n.indexOf("?"))>0&&parent.frames.length) {
-        d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);
-    }
-    if(!(x=d[n])&&d.all) x=d.all[n]; 
-    for(i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-    for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-    if(!x && d.getElementById) x=d.getElementById(n); 
-    return x;
-}
-
-function MM_preloadImages() {
-    var d=document; if(d.images){ if(!d.MM_p)d.MM_p=new Array();
-        var i,j=d.MM_p.length,a=MM_preloadImages.arguments; 
-        for(i=0;i<a.length;i++) if(a[i].indexOf("#")!=0){
-            d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];
-        }
-    }
-}
-</script>
+<title>Registration - Sewing Camp</title>
 
 <style>
-/* Unified theme: professional + fun */
 .style1 {font-family: Verdana, Arial, Helvetica, sans-serif;}
-.style6 {font-family: Arial, Helvetica, sans-serif; font-size: 10px;}
-.style13 {font-family:'Fredoka', sans-serif; font-weight:700; color:#d6336c; font-size:22px}
-.style14 {font-family:'Nunito', Arial, sans-serif; color:#475569}
+.style14 {font-family: Arial, Helvetica, sans-serif;}
+.style13 {font-family: 'Lucida Handwriting', 'Comic Sans MS', Arial, sans-serif; font-weight: 700; color: #d6336c; font-style: normal; font-size: 20px;}
+
+/* Base page */
+body {background: linear-gradient(180deg, #fffefa 0%, #f6f9ff 100%); color: #222; font-family: Arial, Helvetica, sans-serif;}
 
 /* Navigation Bar Styles */
 .navbar {
@@ -176,27 +152,50 @@ function MM_preloadImages() {
     }
 }
 
-body {background: linear-gradient(180deg,#fffefa 0%, #f6f9ff 100%);}
-table[width="700"] {max-width:920px;margin:18px auto;background:linear-gradient(180deg,#ffffff,#fffafa);border-radius:10px;box-shadow:0 10px 30px rgba(15,23,42,0.08);}
-</style>
+table[width="700"] {max-width:900px; margin:20px auto; background: linear-gradient(180deg,#ffffff,#fffafa); border-radius:10px; box-shadow:0 6px 24px rgba(0,0,0,0.12); overflow:hidden;}
 
+.content {padding: 20px 30px; line-height: 1.6;}
+.content h2 {color: #2a3d66; margin-top: 20px; margin-bottom: 10px;}
+.content p {color: #333; margin-bottom: 12px;}
+.content ul {margin-left: 30px; margin-bottom: 15px;}
+.content li {margin-bottom: 8px; color: #333;}
+.highlight {color: #d6336c; font-weight: bold;}
+.btn-register {display: inline-block; background: linear-gradient(180deg, #ff8fab, #d6336c); color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; box-shadow: 0 6px 14px rgba(214,51,108,0.24);}
+.btn-register:hover {filter: brightness(0.98); transform: translateY(-1px);}
+
+@media (max-width:700px){
+  table[width="700"] {margin:8px}
+  .content {padding: 15px 20px;}
+}
+</style>
 <script>
 // Ensure navbar sits below banner image on all pages
 document.addEventListener('DOMContentLoaded', function(){
         try {
-        var nav = document.querySelector('nav.navbar');
-        var bannerImg = document.querySelector('img[src="/images/SewingMadeSimpleForKidsBanner.png"]');
-        if (nav && bannerImg && bannerImg.parentNode) {
-            bannerImg.parentNode.insertBefore(nav, bannerImg.nextSibling);
-        }
+            var nav = document.querySelector('nav.navbar');
+            var bannerImg = document.querySelector('img[src="/images/SewingMadeSimpleForKidsBanner.png"]');
+            if (nav && bannerImg && bannerImg.parentNode) {
+                bannerImg.parentNode.insertBefore(nav, bannerImg.nextSibling);
+            }
     } catch(e) { /* no-op */ }
 });
-
 </script>
 </head>
-<body bgcolor="#ffffff" onload="MM_preloadImages('images/home_f2.gif','images/home_f3.gif','images/home_f4.gif')">
+<body bgcolor="#ffffff">
 
-<!-- Navigation Bar (will be moved under banner by script) -->
+<table border="0" cellspacing="0" cellpadding="0" width="700">
+<tr>
+<td colspan="16"><img src="/images/SewingMadeSimpleForKidsBanner.png" width="552" height="100" alt="Sewing Made Simple For Kids Banner"></td>
+<td rowspan="2" colspan="4"></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="16"></td>
+<td></td>
+</tr>
+</table>
+
+<!-- Navigation Bar -->
 <nav class="navbar" role="navigation" aria-label="Main">
     <ul class="navbar-menu">
         <li class="navbar-item"><a href="/">Home</a></li>
@@ -219,69 +218,53 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <table border="0" cellspacing="0" cellpadding="0" width="700">
 <tr>
-<td colspan="16"><img src="/images/SewingMadeSimpleForKidsBanner.png" width="552" height="100" alt="Sewing Made Simple For Kids Banner"></td>
-<td rowspan="2" colspan="4"><img src="/images/sew_mach.gif" width="148" height="152" alt=""></td>
-<td><img src="/images/spacer.gif" width="1" height="100" alt=""></td>
-</tr>
-<tr>
-<td colspan="16"><img src="/images/summer_camp.gif" width="552" height="52" alt=""></td>
-<td><img src="/images/spacer.gif" width="1" height="52" alt=""></td>
-</tr>
-
-<tr>
-<td colspan="18"></td>
-<td></td>
-</tr>
-
-<tr>
 <td bgcolor="#ffffff" valign="top" colspan="18">
-<p class="style13">Camp Schedule</p>
-<p class="style14">Our camp offers a structured schedule with a mix of instructional sessions, creative project time, and fun breaks. The schedule is designed to ensure campers get hands-on experience while maintaining an enjoyable and safe environment.</p>
+<div class="content">
+  <p class="style13">Registration</p>
 
-<h3>Weekly Schedule:</h3>
-<table border="1" cellspacing="0" cellpadding="5" style="width:100%; border-collapse: collapse;">
-<tr>
-<th>Time</th>
-<th>Activity</th>
-</tr>
-<tr>
-<td>9:00 AM - 10:00 AM</td>
-<td>Introduction & Warm-Up Activities</td>
-</tr>
-<tr>
-<td>10:00 AM - 11:30 AM</td>
-<td>Project Work: Sewing Basics</td>
-</tr>
-<tr>
-<td>11:30 AM - 12:00 PM</td>
-<td>Break & Snack</td>
-</tr>
-<tr>
-<td>12:00 PM - 1:00 PM</td>
-<td>Intermediate Sewing Projects</td>
-</tr>
-<tr>
-<td>1:00 PM - 2:00 PM</td>
-<td>Team Challenges & Games</td>
-</tr>
-<tr>
-<td>2:00 PM - 3:00 PM</td>
-<td>Wrap-up & Showcase</td>
-</tr>
-</table>
+  <p><span class="highlight">Don't wait long to register, spots are filling up fast!</span></p>
 
-<p class="style14">Schedules may vary depending on the age group and session. Each camper receives personal guidance and support throughout their time at camp.</p>
+  <p>We have a registration process that we follow to ensure a spot for your child:</p>
+
+  <h2>Registration Steps:</h2>
+  <ol>
+    <li><strong>Choose your preferred week(s)</strong> (you may want to choose a 1st and 2nd choice)</li>
+    <li><strong>Email me</strong> (BEFORE sending in your registration and check) so I can pencil you in for that week.</li>
+    <li><strong>Fill out the online registration form</strong> here: <a href="/register" class="highlight">ONLINE REGISTRATION</a></li>
+  </ol>
+
+  <h2>Payment ($125)</h2>
+  <p>Payment ($125) can be made through one of the following methods:</p>
+  <ul>
+    <li><strong>Venmo:</strong> @Csaf16 (please don't send as a business payment, I am charged a fee)</li>
+    <li><strong>Check:</strong> Send your check payable to Jennifer Safsten to the following address:
+      <div style="margin-left: 20px; margin-top: 8px; font-style: italic;">
+        Jennifer Safsten<br>
+        13485 Four Seasons Ct<br>
+        Mt. Airy, MD 21771
+      </div>
+    </li>
+  </ul>
+
+  <p>Once your payment is received, this will guarantee your spot for that week.</p>
+
+  <p><strong>Note:</strong> Payments MUST be received within 1 week of reserving a spot (unless other arrangements are made). If not received within one week, the spot will become available to other participants.</p>
+
+  <h2>Refund Policy</h2>
+  <p>There are NO refunds, deductions, or credits granted for any missed class or camp. However, we offer a generous make-up policy. Make-up classes are available for any class missed due to illness.</p>
+
+  <p style="text-align: center;">
+    <a href="/register" class="btn-register">Fill Out Registration Form</a>
+  </p>
+</div>
 </td>
 <td></td>
 </tr>
 
 <tr>
-<td colspan="2"><a href="/registrations">Register</a></td>
+<td colspan="2"></td>
 <td rowspan="5"></td>
 <td colspan="17" rowspan="2" align="left" valign="middle" bgcolor="#ffffff">
-<p class="style13">Why Our Schedule Works</p>
-<p class="style14">We balance learning with fun. Campers receive focused instruction but also have time to socialize, relax, and enjoy creative projects. Our schedule helps maintain energy and excitement throughout the day.</p>
-<!-- sewing needle image removed (file not present) -->
 </td>
 <td></td>
 </tr>
@@ -318,5 +301,3 @@ document.addEventListener('DOMContentLoaded', function(){
 
 </body>
 </html>
-
-<!-- End of campschedule.ejs -->

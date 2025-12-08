@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Sewing Camp</title>
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif; background: linear-gradient(180deg,#fffefa,#f6f9ff);}
+    .container {max-width:900px;margin:28px auto;padding:18px;background:#fff;border-radius:10px;box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+  </style>
+<script>
+// Add banner + ensure navbar sits below banner (admin page)
+document.addEventListener('DOMContentLoaded', function(){
+  try {
+    var body = document.body;
+    // insert banner at top if not present
+    if (!document.querySelector('img[src="/images/SewingMadeSimpleForKidsBanner.png"]')) {
+      var tbl = document.createElement('table');
+      tbl.setAttribute('border','0'); tbl.setAttribute('cellspacing','0'); tbl.setAttribute('cellpadding','0');
+      tbl.setAttribute('width','700'); tbl.style.maxWidth='900px'; tbl.style.margin='18px auto';
+      tbl.innerHTML = '<tr><td colspan="16"><img src="/images/SewingMadeSimpleForKidsBanner.png" alt="Sewing Made Simple for Kids Banner" style="display:block;width:100%;height:auto;border-radius:8px"></td></tr>';
+      body.insertBefore(tbl, body.firstChild);
+    }
+    // move navbar (if exists) directly after banner image
+    var nav = document.querySelector('nav.navbar');
+    var bannerImg = document.querySelector('img[src="/images/SewingMadeSimpleForKidsBanner.png"]');
+    if (nav && bannerImg && bannerImg.parentNode) bannerImg.parentNode.insertBefore(nav, bannerImg.nextSibling);
+  } catch(e) {}
+});
+</script>
+</head>
+<body>
+  <table border="0" cellspacing="0" cellpadding="0" width="700" style="max-width:900px;margin:18px auto;">
+    <tr>
+      <td colspan="16"><img src="/images/SewingMadeSimpleForKidsBanner.png" alt="Sewing Made Simple for Kids Banner" style="display:block;width:100%;height:auto;border-radius:8px"></td>
+      <td rowspan="2" colspan="4"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="16"></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <nav class="navbar" role="navigation" aria-label="Main">
+    <ul class="navbar-menu">
+        <li class="navbar-item"><a href="/">Home</a></li>
+        <li class="navbar-item"><a href="/campinfo">Camp Info</a></li>
+        <li class="navbar-item"><a href="/campschedule">Schedule</a></li>
+        <li class="navbar-item"><a href="/registrations">Registration</a></li>
+        <li class="navbar-item"><a href="/contactus">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+        <% if (!user) { %>
+            <a href="/login" class="btn-login">Login</a>
+        <% } else { %>
+            <% if (user.is_admin) { %>
+                <a href="/admin" class="btn-admin">Admin</a>
+            <% } %>
+            <a href="/logout" class="btn-logout">Logout</a>
+        <% } %>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Admin area placeholder: content will be added later -->
+  </div>
+</body>
+</html>

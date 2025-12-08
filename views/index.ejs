@@ -71,93 +71,166 @@ function MM_preloadImages() {
 </script>
 
 <style>
-/* --- BASE & PAGE STYLES --- */
+/* Unified theme: professional + fun */
 body {
-    background-color: #fdfbf7; /* Warm paper color */
-    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(180deg,#fffefa 0%, #f6f9ff 100%);
+    font-family: 'Nunito', Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    color: #444;
+    color: #222;
 }
 
-/* Center everything */
-table {
-    margin: 0 auto;
-}
-
-/* --- LEGACY TOP SECTION STYLING --- */
-/* We target the specific width 700 table to style the top part without breaking layout */
-table[width="700"] {
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-radius: 0 0 15px 15px; /* Rounded bottom corners only */
-    margin-bottom: 40px; /* Space between top section and project list */
-}
-
-/* Style the text inside the top section */
-.style13 {
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 600; 
-    color: #ff6b6b; /* Playful coral/pink */
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-style: normal; /* Removed italic for better readability */
-}
-
-.style14 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* --- NEW PROJECT TABLE STYLING --- */
-.project-gallery {
-    width: 100%;
-    max-width: 1000px; /* Made slightly wider for better spacing */
-    border-collapse: separate; 
-    border-spacing: 20px; /* Gaps between cards */
-}
-
-/* The Card Look */
-.project-gallery td {
-    background: #ffffff;
-    border: 2px dashed #ff9a9e; /* STITCH EFFECT: Pink dashed border */
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    vertical-align: top;
-    width: 25%; /* Forces 4 columns */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-/* Hover Effect on Cards */
-.project-gallery td:hover {
-    transform: translateY(-5px); /* Lifts up */
-    border-color: #a18cd1; /* Turns purple */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Images inside cards */
-.project-gallery img {
-    max-width: 100%;
-    height: auto;
+/* Navigation Bar Styles */
+.navbar {
+    background: linear-gradient(135deg, #2a3d66 0%, #0b3d8a 100%);
+    padding: 0;
+    margin: 0 auto 20px;
     border-radius: 10px;
-    margin-bottom: 12px;
+    box-shadow: 0 6px 20px rgba(42, 61, 102, 0.2);
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar-brand {
+    display: none;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar-item {
+    position: relative;
+}
+
+.navbar-item a {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 18px 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 3px solid transparent;
 }
 
-/* Typography inside cards */
-.project-gallery td {
-    font-family: 'Nunito', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: #444;
+.navbar-item a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-bottom-color: #ff8fab;
 }
 
+.navbar-item a.active {
+    border-bottom-color: #ff8fab;
+    color: #ffb8c8;
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 8px;
+    padding: 8px 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #ff8fab, #d6336c);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-login:hover {
+    box-shadow: 0 6px 16px rgba(214, 51, 108, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-admin {
+    background: linear-gradient(135deg, #0b63ff, #0452d4);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-admin:hover {
+    box-shadow: 0 6px 16px rgba(11, 99, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-logout:hover {
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .navbar-brand {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar-menu {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .navbar-item a {
+        padding: 12px 12px;
+        font-size: 13px;
+    }
+    
+    .navbar-actions {
+        width: 100%;
+        padding: 12px 15px;
+        justify-content: center;
+    }
+}
+
+table {margin:0 auto}
+table[width="700"] {max-width:920px;margin:18px auto;background:linear-gradient(180deg,#ffffff,#fffafa);border-radius:10px;box-shadow:0 10px 30px rgba(15,23,42,0.08);}
+table[width="700"] img {display: block; width: 100%; height: auto; max-width: 100%; border-radius: 8px;}
+.style13 {font-family:'Fredoka', sans-serif; font-weight:700; color:#d6336c; font-size:24px; margin-bottom:8px}
+.style14 {font-family:'Nunito', sans-serif; color:#475569; font-size:16px; line-height:1.6}
+
+.project-gallery {width:100%; max-width:1000px; border-collapse: separate; border-spacing:18px}
+.project-gallery td {background:#fff; border-radius:12px; padding:14px; text-align:center; vertical-align:top; box-shadow:0 6px 18px rgba(11,63,136,0.04); transition:transform .18s, box-shadow .18s}
+.project-gallery td:hover{transform:translateY(-6px); box-shadow:0 14px 30px rgba(11,63,136,0.08)}
+.project-gallery img{max-width:100%; height:auto; border-radius:8px; margin-bottom:10px}
+.project-gallery td.section-header{background:#d6336c;color:#fff;font-size:20px;padding:18px;border-radius:8px}
 /* --- SECTION HEADERS (First Summer Sewer, etc) --- */
 /* Styling the rows that act as titles */
 .section-header {
@@ -189,29 +262,35 @@ table[width="700"] {
 }
 </style>
 
+<script>
+// Ensure navbar sits below banner image on all pages
+document.addEventListener('DOMContentLoaded', function(){
+        try {
+        var nav = document.querySelector('nav.navbar');
+        var bannerImg = document.querySelector('img[src="/images/SewingMadeSimpleForKidsBanner.png"]');
+        if (nav && bannerImg && bannerImg.parentNode) {
+            bannerImg.parentNode.insertBefore(nav, bannerImg.nextSibling);
+        }
+    } catch(e) { /* no-op */ }
+});
+</script>
 </head>
 <body onload="MM_preloadImages('images/home_f2.gif','images/home_f3.gif','images/home_f4.gif')">
 
 <table border="0" cellspacing="0" cellpadding="0" width="700">
 <tr>
 <td colspan="16"><img src="/images/SewingMadeSimpleForKidsBanner.png" width="552" height="100" alt="Sewing Made Simple for Kids Banner"></td>
-<td rowspan="2" colspan="4"><img src="images/sew_mach.gif" width="148" height="152" alt=""></td>
-<td><img src="images/spacer.gif" width="1" height="100" alt=""></td>
+<td rowspan="2" colspan="4"></td>
+<td></td>
 </tr>
 <tr>
-<td colspan="16"><img src="images/summer_camp.gif" width="552" height="52" alt=""></td>
-<td><img src="images/spacer.gif" width="1" height="52" alt=""></td>
+<td colspan="16"></td>
+<td></td>
 </tr>
 
 <tr>
-<td rowspan="2"><img src="images/left_of_nav.gif" width="49" height="46" alt=""></td>
-<td colspan="5"><a href="/"><img src="images/home.gif" width="130" height="30" alt="Home"></a></td>
-<td colspan="4"><a href="/campinfo"><img src="images/camp_info.gif" width="130" height="30" alt="Camp Info"></a></td>
-<td colspan="3"><a href="/campschedule"><img src="images/camp_sched.gif" width="130" height="30" alt="Camp Schedule"></a></td>
-<td colspan="4"><a href="/registration"><img src="images/registration.gif" width="130" height="30" alt="Registration"></a></td>
-<td colspan="2"><a href="/contactus"><img src="images/contact_us.gif" width="130" height="30" alt="Contact Us"></a></td>
-<td rowspan="2"><img src="images/template_r3_c20.gif" width="1" height="46" alt=""></td>
-<td><img src="images/spacer.gif" width="1" height="30" alt=""></td>
+<td colspan="18"></td>
+<td></td>
 </tr>
 
 <tr>
@@ -233,49 +312,70 @@ Once you have received confirmation, please go online and fill out the registrat
 Sessions fill up quickly so please contact me on your camp preferences as soon as possible.
 </p>
 </td>
-<td><img src="images/spacer.gif" width="1" height="16" alt="Picture"></td>
+<td></td>
 </tr>
 
 <tr>
-<td colspan="2"><a href="/registration"><img src="images/reg_button.gif" width="88" height="36" alt="Register"></a></td>
-<td rowspan="5"><img src="images/left_of_text.gif" width="21" height="402" alt=""></td>
+<td colspan="2"><a href="/registrations">Register</a></td>
+<td rowspan="5"></td>
 <td colspan="17" rowspan="2" align="left" valign="middle" bgcolor="#ffffff">
 <p class="style13">Featured Activities</p>
 <p class="style14">Join our sewing camp to learn a variety of techniques, create projects, and make new friends!</p>
-<img src="images/sewing_needle.gif" width="549" height="37" alt="Sewing Needle" align="center">
+<!-- sewing needle image removed (file not present) -->
 </td>
-<td><img src="images/spacer.gif" width="1" height="36" alt="Picture"></td>
+<td></td>
 </tr>
 
 <tr>
-<td rowspan="4" colspan="2"><img src="images/below_reg_button.gif" width="88" height="366" alt=""></td>
-<td><img src="images/spacer.gif" width="1" height="347" alt=""></td>
+<td rowspan="4" colspan="2"></td>
+<td></td>
 </tr>
 
 <tr>
-<td rowspan="2" colspan="17"><img src="images/below_text.gif" width="591" height="5" alt=""></td>
-<td><img src="images/spacer.gif" width="1" height="4" alt=""></td>
+<td rowspan="2" colspan="17"></td>
+<td></td>
 </tr>
 
 <tr>
-<td><img src="images/spacer.gif" width="1" height="1" alt=""></td>
+<td></td>
 </tr>
 
 <tr>
-<td><img src="images/SewingMadeSimpleForKidsBanner" width="15" height="14" alt=""></td>
-<td><a href="/"><img src="images/home_2.gif" width="37" height="14" alt=""></a></td>
-<td colspan="2"><img src="images/r_home.gif" width="20" height="14" alt=""></td>
-<td><a href="/campinfo"><img src="images/template_r9_c8.gif" width="71" height="14" alt=""></a></td>
-<td><img src="images/r_camp_info.gif" width="21" height="14" alt=""></td>
-<td colspan="2"><a href="/campschedule"><img src="images/template_r9_c10.gif" width="101" height="14" alt=""></a></td>
-<td><img src="images/r_camp_sched.gif" width="21" height="14" alt=""></td>
-<td colspan="2"><a href="/registration"><img src="images/template_r9_c13.gif" width="81" height="14" alt=""></a></td>
-<td><img src="images/r_reg.gif" width="21" height="14" alt=""></td>
-<td colspan="3"><a href="/contactus"><img src="images/contact_us2.gif" width="75" height="14" alt=""></a></td>
-<td colspan="2"><img src="images/template_r9_c19.gif" width="128" height="14" alt=""></td>
-<td><img src="images/spacer.gif" width="1" height="14" alt=""></td>
+<td></td>
+<td></td>
+<td colspan="2"></td>
+<td></td>
+<td></td>
+<td colspan="2"></td>
+<td></td>
+<td colspan="2"></td>
+<td></td>
+<td colspan="3"></td>
+<td colspan="2"></td>
+<td></td>
 </tr>
 </table>
+
+<!-- Navigation Bar -->
+<nav class="navbar" role="navigation" aria-label="Main">
+    <ul class="navbar-menu">
+        <li class="navbar-item"><a href="/">Home</a></li>
+        <li class="navbar-item"><a href="/campinfo">Camp Info</a></li>
+        <li class="navbar-item"><a href="/campschedule">Schedule</a></li>
+        <li class="navbar-item"><a href="/registrations">Registration</a></li>
+        <li class="navbar-item"><a href="/contactus">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+        <% if (!user) { %>
+            <a href="/login" class="btn-login">Login</a>
+        <% } else { %>
+            <% if (user.is_admin) { %>
+                <a href="/admin" class="btn-admin">Admin</a>
+            <% } %>
+            <a href="/logout" class="btn-logout">Logout</a>
+        <% } %>
+    </div>
+</nav>
 
 <table class="project-gallery">
 <tr>
@@ -444,6 +544,13 @@ Sessions fill up quickly so please contact me on your camp preferences as soon a
     <td><img src="/images/Various Neck Pillows.gif" alt="Various Neck Pillows"><br><br>Various Neck Pillows <br>(Choose 1)</td>
 </tr>
 </table>
+</table>
+
+<% if (user) { %>
+    <div style="text-align:center; margin:14px 0;">
+        <a href="/logout" style="background:#6b7280;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:700;">Logout</a>
+    </div>
+<% } %>
 
 </body>
 </html>

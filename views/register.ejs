@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Registration - Sewing Camp</title>
+<title>Registration Form - Sewing Camp</title>
 
 <style>
 .style1 {font-family: Verdana, Arial, Helvetica, sans-serif;}
@@ -11,6 +11,147 @@
 .style14 {font-family: Arial, Helvetica, sans-serif;}
 /* Base page */
 body {background: linear-gradient(180deg, #fffefa 0%, #f6f9ff 100%); color: #222;}
+
+/* Navigation Bar Styles */
+.navbar {
+    background: linear-gradient(135deg, #2a3d66 0%, #0b3d8a 100%);
+    padding: 0;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(42, 61, 102, 0.2);
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar-brand {
+    display: none;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar-item {
+    position: relative;
+}
+
+.navbar-item a {
+    display: block;
+    padding: 18px 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar-item a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-bottom-color: #ff8fab;
+}
+
+.navbar-item a.active {
+    border-bottom-color: #ff8fab;
+    color: #ffb8c8;
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 8px;
+    padding: 8px 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #ff8fab, #d6336c);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-login:hover {
+    box-shadow: 0 6px 16px rgba(214, 51, 108, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-admin {
+    background: linear-gradient(135deg, #0b63ff, #0452d4);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-admin:hover {
+    box-shadow: 0 6px 16px rgba(11, 99, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-logout:hover {
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .navbar-brand {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar-menu {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .navbar-item a {
+        padding: 12px 12px;
+        font-size: 13px;
+    }
+    
+    .navbar-actions {
+        width: 100%;
+        padding: 12px 15px;
+        justify-content: center;
+    }
+}
+
 /* Center the main layout and make it card-like */
 table[width="700"] {max-width:900px; margin:20px auto; background: linear-gradient(180deg,#ffffff,#fffafa); border-radius:10px; box-shadow:0 6px 24px rgba(0,0,0,0.12); overflow:hidden;}
 /* Form area */
@@ -59,7 +200,6 @@ document.addEventListener('DOMContentLoaded', function(){
 </head>
 <body bgcolor="#ffffff">
 
-  
 <table border="0" cellspacing="0" cellpadding="0" width="700">
 <tr>
 <td colspan="16"><img src="/images/SewingMadeSimpleForKidsBanner.png" width="552" height="100" alt="Sewing Made Simple For Kids Banner"></td>
@@ -70,26 +210,36 @@ document.addEventListener('DOMContentLoaded', function(){
 <td colspan="16"></td>
 <td></td>
 </tr>
+</table>
 
-<!-- Navigation -->
-<tr>
-<td rowspan="2"></td>
-<td colspan="5"><a href="/">Home</a></td>
-<td colspan="4"><a href="/campinfo">Camp Info</a></td>
-<td colspan="3"><a href="/campschedule">Camp Schedule</a></td>
-<td colspan="4"><a href="/registration">Registration</a></td>
-<td colspan="2"><a href="/contactus">Contact Us</a></td>
-<td colspan="2"><a href="/login"><div style="width:130px;height:30px;background:#d6336c;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:4px;font-weight:bold;text-decoration:none;">Login</div></a></td>
-<td rowspan="2"></td>
-<td></td>
-</tr>
+<!-- Navigation Bar -->
+<nav class="navbar" role="navigation" aria-label="Main">
+    <ul class="navbar-menu">
+        <li class="navbar-item"><a href="/">Home</a></li>
+        <li class="navbar-item"><a href="/campinfo">Camp Info</a></li>
+        <li class="navbar-item"><a href="/campschedule">Schedule</a></li>
+        <li class="navbar-item"><a href="/registrations">Registration</a></li>
+        <li class="navbar-item"><a href="/contactus">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+        <% if (!user) { %>
+            <a href="/login" class="btn-login">Login</a>
+        <% } else { %>
+            <% if (user.is_admin) { %>
+                <a href="/admin" class="btn-admin">Admin</a>
+            <% } %>
+            <a href="/logout" class="btn-logout">Logout</a>
+        <% } %>
+    </div>
+</nav>
 
+<table border="0" cellspacing="0" cellpadding="0" width="700">
 <tr>
 <td bgcolor="#ffffff" valign="top" colspan="18">
 <p class="style13">Registration Form</p>
 <p class="style14">Please fill out the information below to register for Sewing Camp. Required fields are marked with *</p>
 
-<form action="/registration" method="POST">
+<form action="/register" method="POST">
   <table class="reg-table" border="0" cellspacing="5" cellpadding="5">
     <tr>
       <td class="style14">First Name*:</td>
@@ -229,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('form[action="/registration"]') || document.querySelector('form');
+      const form = document.querySelector('form[action="/register"]') || document.querySelector('form');
       const birthInput = form.querySelector('input[name="birthdate"]');
       const ageInput = form.querySelector('input[name="age"]');
       const phoneInput = form.querySelector('input[name="phone"]');
@@ -314,12 +464,11 @@ document.addEventListener('DOMContentLoaded', function(){
   </div>
 
 <tr>
-<td colspan="2"><a href="/registration">Register</a></td>
+<td colspan="2"><a href="/registrations">Registration Info</a></td>
 <td rowspan="5"></td>
 <td colspan="17" rowspan="2" align="left" valign="middle" bgcolor="#ffffff">
 <p class="style13">Why Attend?</p>
 <p class="style14">Sewing Camp is designed to foster creativity, develop skills, and make lifelong friends. Join us for a fun and educational experience!</p>
-<!-- sewing needle image removed (file not present) -->
 </td>
 <td></td>
 </tr>
@@ -357,4 +506,4 @@ document.addEventListener('DOMContentLoaded', function(){
 </body>
 </html>
 
-<!-- End of registration.ejs -->
+<!-- End of register.ejs -->
